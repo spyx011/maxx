@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MAXX - for you</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-icon">M</div>
+          <span>MAXX</span>
+        </div>
+
+        <button class="new-chat" id="newChat">
+          <span>＋</span>
+          New chat
+        </button>
+
+        <div class="side-title">CHATS</div>
+
+        <div id="chatList" class="chat-list"></div>
+
+        <div class="sidebar-bottom">
+          <div class="user">
+            <div class="avatar">WNXVRA</div>
+
+            <div>
+              <strong>WNXVRA</strong>
+              <small>MAXX user</small>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main">
+        <!-- HEADER -->
+        <header class="topbar">
+          <button id="menuBtn" class="icon-btn">☰</button>
+
+          <div class="status">
+            <span class="status-dot"></span>
+            MAXX
+          </div>
+
+          <button class="icon-btn">⚙</button>
+        </header>
+
+        <!-- CHAT -->
+        <section class="chat-area" id="chatArea">
+          <div class="welcome" id="welcome">
+            <div class="hero-logo">Maxx</div>
+
+            <h1>What can I help you build?</h1>
+
+            <p>Ask MAXX anything. create, code, learn, solve.</p>
+
+            <div class="suggestions">
+              <button
+                data-prompt="Write a Python program that explains machine learning"
+              >
+                <span>💻</span>
+                Write code
+              </button>
+
+              <button data-prompt="Explain quantum physics simply">
+                <span>🧠</span>
+                Explain something
+              </button>
+
+              <button data-prompt="Help me build a website">
+                <span>🚀</span>
+                Build something
+              </button>
+
+              <button data-prompt="Give me some creative project ideas">
+                <span>✨</span>
+                Get ideas
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- INPUT -->
+        <div class="input-area">
+          <div class="input-box">
+            <textarea
+              id="messageInput"
+              placeholder="Ask MAXX anything..."
+              rows="1"
+            ></textarea>
+
+            <button id="sendBtn" class="send-btn">↑</button>
+          </div>
+
+          <div class="input-note">
+            MAXX can make mistakes. Check important information.
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
