@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const express = require("express");
-const OpenAI = require("openai");
+const Groq = require("groq-sdk");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
@@ -9,8 +9,8 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+const client = new Groq({
+  apiKey: process.env.GROQ_API_KEY,
 });
 
 app.use(express.json({ limit: "1mb" }));
@@ -148,13 +148,18 @@ app.post("/api/chat", async (req, res) => {
       },
     ];
 
-    const response = await client.responses.create({
-      model: "gpt-5-mini",
-      instructions: MAXX_SYSTEM,
-      input: conversation,
+    const response = await client.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
+      messages: [
+        {
+          role: "system",
+          content: MAXX_SYSTEM,
+        },
+        ...conversation,
+      ],
     });
 
-    const reply = response.output_text;
+    const reply = response.choices[0]?.message?.content;
 
     if (!reply) {
       return res.status(500).json({
