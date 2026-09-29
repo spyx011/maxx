@@ -149,7 +149,7 @@ app.post("/api/chat", async (req, res) => {
     ];
 
     const response = await client.chat.completions.create({
-      model: "llama-3.1-70b-versatile",
+      model: "llama-3.1-8b-instant",
       messages: [
         {
           role: "system",
