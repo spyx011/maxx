@@ -4,229 +4,339 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>MAXX // WNXVRA</title>
+    <title>MAXX // Command System</title>
 
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <!-- SPACE BACKGROUND -->
-    <div class="space">
-      <div class="stars"></div>
-      <div class="stars stars-2"></div>
-      <div class="stars stars-3"></div>
+    <div class="dashboard">
+      <!-- ================= TOP BAR ================= -->
 
-      <div class="planet planet-one"></div>
-      <div class="planet planet-two"></div>
-
-      <div class="orbital-ring ring-one"></div>
-      <div class="orbital-ring ring-two"></div>
-    </div>
-
-    <div class="app">
-      <!-- ================= SIDEBAR ================= -->
-
-      <aside class="sidebar">
+      <header class="topbar">
         <div class="brand">
-          <div class="brand-core">
-            <span></span>
-          </div>
+          <div class="brand-mark">M</div>
 
-          <div class="brand-text">
+          <div>
             <strong>MAXX</strong>
-            <small>ARTIFICIAL INTELLIGENCE</small>
+            <small>AI COMMAND SYSTEM</small>
           </div>
         </div>
 
-        <button class="new-chat" id="newChat">
-          <span>＋</span>
-          NEW MISSION
-        </button>
-
-        <div class="side-title">TRANSMISSIONS</div>
-
-        <div id="chatList" class="chat-list">
-          <!-- Chat history appears here -->
+        <div class="mission-title">
+          <span class="status-dot"></span>
+          SYSTEM STATUS:
+          <strong>NOMINAL</strong>
         </div>
 
-        <div class="sidebar-system">
-          <div class="system-label">SYSTEM STATUS</div>
-
-          <div class="system-status">
-            <span class="status-dot"></span>
-            ONLINE
-          </div>
-
-          <div class="system-line">
-            <span>CORE</span>
-            <span>MAXX-01</span>
-          </div>
-
-          <div class="system-line">
-            <span>NETWORK</span>
-            <span>CONNECTED</span>
-          </div>
+        <div class="top-info">
+          <span>WNXVRA // COMMAND</span>
+          <span id="systemTime">--:--:--</span>
         </div>
+      </header>
 
-        <div class="sidebar-bottom">
-          <div class="user">
-            <div class="avatar">W</div>
+      <!-- ================= MAIN GRID ================= -->
 
-            <div>
-              <strong>WNXVRA</strong>
-              <small>COMMANDER</small>
-            </div>
-          </div>
-        </div>
-      </aside>
+      <main class="dashboard-grid">
+        <!-- ================= LEFT COLUMN ================= -->
 
-      <!-- ================= MAIN ================= -->
+        <aside class="left-column">
+          <!-- SYSTEM STATUS -->
 
-      <main class="main">
-        <!-- TOP HUD -->
-
-        <header class="topbar">
-          <button id="menuBtn" class="icon-btn">☰</button>
-
-          <div class="system-title">
-            <span class="system-pulse"></span>
-
-            <div>
-              <strong>MAXX</strong>
-              <small>ARTIFICIAL INTELLIGENCE CORE</small>
-            </div>
-          </div>
-
-          <div class="top-right">
-            <div class="connection">
-              <span></span>
-              LINKED
+          <section class="panel">
+            <div class="panel-header">
+              <span>SYSTEM STATUS</span>
+              <small>NOMINAL</small>
             </div>
 
-            <button class="icon-btn">⚙</button>
-          </div>
-        </header>
+            <div class="status-grid">
+              <div class="stat-card warning">
+                <span>ACTIVE ALERTS</span>
+                <strong>02</strong>
+                <small>▼ -4.1%</small>
+              </div>
 
-        <!-- ================= CHAT ================= -->
+              <div class="stat-card">
+                <span>CPU LOAD</span>
+                <strong>24%</strong>
+                <small>▲ +3.2%</small>
+              </div>
 
-        <section class="chat-area" id="chatArea">
-          <!-- WELCOME / AI CORE -->
+              <div class="stat-card">
+                <span>MEMORY</span>
+                <strong>41%</strong>
+                <small>STABLE</small>
+              </div>
 
-          <div class="welcome" id="welcome">
-            <div class="core-container">
-              <div class="core-orbit orbit-a"></div>
-              <div class="core-orbit orbit-b"></div>
-              <div class="core-orbit orbit-c"></div>
-
-              <div class="core-glow"></div>
-
-              <div class="ai-core">
-                <div class="core-inner">M</div>
+              <div class="stat-card">
+                <span>NETWORK</span>
+                <strong>98%</strong>
+                <small>CONNECTED</small>
               </div>
             </div>
+          </section>
 
-            <div class="welcome-label">ARTIFICIAL INTELLIGENCE ONLINE</div>
+          <!-- OPERATIONS -->
 
-            <h1>MAXX</h1>
+          <section class="panel">
+            <div class="panel-header">
+              <span>OPERATIONS</span>
+              <small>ACTIVE</small>
+            </div>
 
-            <p class="welcome-main">
-              Your AI system for
-              <span>building the impossible.</span>
-            </p>
-
-            <p class="welcome-sub">CREATE · CODE · LEARN · EXPLORE</p>
-
-            <!-- QUICK COMMANDS -->
-
-            <div class="suggestions">
-              <button
-                data-prompt="Write a Python program that explains machine learning"
-              >
-                <span>⌘</span>
+            <div class="operation-list">
+              <button data-prompt="Help me write code">
+                <span class="operation-icon">⌘</span>
                 <div>
                   <strong>CODE</strong>
-                  <small>Build something</small>
+                  <small>Development operations</small>
                 </div>
+                <span>›</span>
               </button>
 
-              <button data-prompt="Explain quantum physics simply">
-                <span>◈</span>
+              <button data-prompt="Help me research a topic">
+                <span class="operation-icon">◎</span>
                 <div>
-                  <strong>LEARN</strong>
-                  <small>Explore knowledge</small>
+                  <strong>RESEARCH</strong>
+                  <small>Knowledge operations</small>
                 </div>
+                <span>›</span>
               </button>
 
-              <button data-prompt="Help me build a website">
-                <span>◇</span>
+              <button data-prompt="Analyze this problem">
+                <span class="operation-icon">◇</span>
                 <div>
-                  <strong>BUILD</strong>
-                  <small>Create a project</small>
+                  <strong>ANALYSIS</strong>
+                  <small>Problem solving</small>
                 </div>
-              </button>
-
-              <button data-prompt="Give me some creative project ideas">
-                <span>✦</span>
-                <div>
-                  <strong>IDEATE</strong>
-                  <small>Generate ideas</small>
-                </div>
+                <span>›</span>
               </button>
             </div>
+          </section>
 
-            <!-- SYSTEM READOUT -->
+          <!-- SYSTEM LOAD -->
 
-            <div class="readout">
-              <div>
-                <span>CORE</span>
-                <strong>ONLINE</strong>
+          <section class="panel graph-panel">
+            <div class="panel-header">
+              <span>SYSTEM TELEMETRY</span>
+              <small>LIVE</small>
+            </div>
+
+            <div class="graph">
+              <div class="graph-line line-one"></div>
+              <div class="graph-line line-two"></div>
+              <div class="graph-line line-three"></div>
+
+              <div class="graph-grid"></div>
+            </div>
+
+            <div class="graph-labels">
+              <span>CPU</span>
+              <span>MEMORY</span>
+              <span>NETWORK</span>
+            </div>
+          </section>
+        </aside>
+
+        <!-- ================= CENTER ================= -->
+
+        <section class="center-column">
+          <!-- MAXX CORE -->
+
+          <section class="panel core-panel">
+            <div class="panel-header">
+              <span>MAXX ARTIFICIAL INTELLIGENCE</span>
+
+              <div class="core-status">
+                <span class="status-dot"></span>
+                ONLINE
+              </div>
+            </div>
+
+            <div class="core-display">
+              <div class="core-ring ring-1"></div>
+              <div class="core-ring ring-2"></div>
+              <div class="core-ring ring-3"></div>
+
+              <div class="core">
+                <span class="core-letter">M</span>
               </div>
 
-              <div>
-                <span>AI ENGINE</span>
+              <div class="core-label">MAXX CORE</div>
+            </div>
+          </section>
+
+          <!-- CHAT -->
+
+          <section class="panel chat-panel">
+            <div class="panel-header">
+              <span>COMMAND TERMINAL</span>
+              <small>SECURE LINK</small>
+            </div>
+
+            <section class="chat-area" id="chatArea">
+              <div class="welcome" id="welcome">
+                <div class="welcome-title">AWAITING COMMAND</div>
+
+                <p>MAXX AI CORE READY FOR TRANSMISSION</p>
+
+                <div class="quick-commands">
+                  <button
+                    data-prompt="Write a Python program that explains machine learning"
+                  >
+                    CODE
+                  </button>
+
+                  <button data-prompt="Explain quantum physics simply">
+                    EXPLAIN
+                  </button>
+
+                  <button data-prompt="Help me build a website">BUILD</button>
+
+                  <button data-prompt="Give me creative project ideas">
+                    IDEATE
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- INPUT -->
+
+            <div class="input-area">
+              <div class="input-box">
+                <span class="command-prefix">&gt;</span>
+
+                <textarea
+                  id="messageInput"
+                  placeholder="Transmit command to MAXX..."
+                  rows="1"
+                ></textarea>
+
+                <button id="sendBtn" class="send-btn" title="Send command">
+                  ↗
+                </button>
+              </div>
+
+              <div class="input-note">
+                ENCRYPTED COMMAND CHANNEL
+                <span>///</span>
+                MAXX CORE ONLINE
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- ================= RIGHT COLUMN ================= -->
+
+        <aside class="right-column">
+          <!-- AI STATUS -->
+
+          <section class="panel">
+            <div class="panel-header">
+              <span>AI STATUS</span>
+              <small>MAXX-01</small>
+            </div>
+
+            <div class="ai-status">
+              <div class="ai-row">
+                <span>CORE</span>
+                <strong class="green">ONLINE</strong>
+              </div>
+
+              <div class="ai-row">
+                <span>MODEL</span>
+                <strong>LLAMA</strong>
+              </div>
+
+              <div class="ai-row">
+                <span>CONTEXT</span>
                 <strong>READY</strong>
               </div>
 
-              <div>
-                <span>LINK</span>
-                <strong>STABLE</strong>
+              <div class="ai-row">
+                <span>NETWORK</span>
+                <strong class="green">CONNECTED</strong>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <!-- ================= INPUT ================= -->
+          <!-- MISSION -->
 
-        <div class="input-area">
-          <div class="input-status">
-            <span class="status-dot"></span>
+          <section class="panel mission-panel">
+            <div class="panel-header">
+              <span>MISSION CONTROL</span>
+              <small>ACTIVE</small>
+            </div>
 
-            <span> MAXX CORE READY </span>
+            <div class="mission">
+              <div class="mission-circle">
+                <span>78%</span>
+                <small>READY</small>
+              </div>
 
-            <span class="input-hint"> ENTER COMMAND </span>
-          </div>
+              <div class="mission-info">
+                <strong>MAXX OPERATIONS</strong>
 
-          <div class="input-box">
-            <div class="command-symbol">&gt;_</div>
+                <div class="progress">
+                  <span></span>
+                </div>
 
-            <textarea
-              id="messageInput"
-              placeholder="Transmit a command to MAXX..."
-              rows="1"
-            ></textarea>
+                <small>AI SYSTEM READINESS</small>
+              </div>
+            </div>
+          </section>
 
-            <button id="sendBtn" class="send-btn" title="Send command">
-              ↗
-            </button>
-          </div>
+          <!-- SYSTEM LOG -->
 
-          <div class="input-note">
-            MAXX AI CORE · WNXVRA
-            <span>///</span>
-            VERIFY CRITICAL INFORMATION
-          </div>
-        </div>
+          <section class="panel log-panel">
+            <div class="panel-header">
+              <span>SYSTEM LOG</span>
+              <small>LIVE</small>
+            </div>
+
+            <div class="system-log">
+              <div>
+                <span>14:31:02</span>
+                <strong>CORE INITIALIZED</strong>
+              </div>
+
+              <div>
+                <span>14:31:08</span>
+                <strong>NETWORK LINKED</strong>
+              </div>
+
+              <div>
+                <span>14:31:14</span>
+                <strong>AI ENGINE READY</strong>
+              </div>
+
+              <div>
+                <span>14:31:21</span>
+                <strong>AWAITING INPUT</strong>
+              </div>
+            </div>
+          </section>
+
+          <!-- QUICK ACTION -->
+
+          <section class="panel">
+            <button class="new-chat" id="newChat">+ NEW COMMAND SESSION</button>
+          </section>
+        </aside>
       </main>
+
+      <!-- FOOTER -->
+
+      <footer class="footer">
+        <span>MAXX // WNXVRA</span>
+
+        <span>AI COMMAND INTERFACE</span>
+
+        <span>
+          <span class="status-dot"></span>
+          ALL SYSTEMS NOMINAL
+        </span>
+      </footer>
     </div>
 
     <script src="script.js"></script>
